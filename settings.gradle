@@ -1,0 +1,3 @@
+rootProject.name='InsertCode'
+include ':app'
+include ':qiniu'
