@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <SurfaceView
+        android:id="@+id/video_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/fl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:padding="12dp"
+        android:src="@drawable/all_icon_back" />
+
+    <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:src="@drawable/icon_video_paly" />
+
+    <ImageView
+        android:id="@+id/iv_pause"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="5dp"
+        android:padding="10dp"
+        android:src="@drawable/icon_video_puse"
+        android:visibility="invisible" />
+</FrameLayout>
