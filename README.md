@@ -1,4 +1,4 @@
-### 某我音乐破解记录(v9.3.1.4)
+### 某我音乐VIP破解+代码植入(v9.3.1.4)
 (参考吾爱破解原文 https://www.52pojie.cn/thread-824512-1-6.html)
 ##### 工具主要是用的MT管理器，我是用的破解版，有条件的可以支持正版。
 MT破解版链接
@@ -55,12 +55,12 @@ const v0 0x1
 * #### 接下来破解版本升级的问题,首先点AndroidManifest.xml文件，选字符串常量池，然后找到9.3.1.4改为9.9.1.4保存
 ![image](https://note.youdao.com/yws/public/resource/54605a04c254330e24bdcaf76a0dc85a/xmlnote/WEBRESOURCE0d79b746ab8a7676734b180f29838908/8909)
 ![image](https://note.youdao.com/yws/public/resource/54605a04c254330e24bdcaf76a0dc85a/xmlnote/WEBRESOURCE82093b72415b069ceb677b5475f8d850/8911)
-* ### 整个VIP破解过程就完成了，签名安装就可以使用了，是不是很简单(破解版APP可能会报a.gray.jvptvr.b病毒，是正常现象)
+* ### 整个VIP破解过程就完成了，签名安装就可以使用了，是不是很简单(破解版APP可能会报a.gray.jvptvr.b病毒，是正常现象) ps：经测试，发现用自己的签名文件打包就不会报病毒
 
 ![image](https://note.youdao.com/yws/public/resource/54605a04c254330e24bdcaf76a0dc85a/xmlnote/WEBRESOURCEa6184451d12b9ca9cbbbd8d8cf380c3f/8918)
 
 
-## 接下来才是重点，在这个APP中嵌入我自己的代码。。。
+## 接下来，在这个APP中嵌入我们自己的代码。。。
 
 * #### 首先是编写代码了，我自己是用了七牛云储存来做测试，源码已放在github，地址: https://github.com/MrWangChong/InsertCode
 
@@ -109,4 +109,4 @@ const v0 0x1
 ![image](https://note.youdao.com/yws/public/resource/54605a04c254330e24bdcaf76a0dc85a/xmlnote/WEBRESOURCEd91af1310655b9bff3568a0393632cd2/9040)
 ![image](https://note.youdao.com/yws/public/resource/54605a04c254330e24bdcaf76a0dc85a/xmlnote/WEBRESOURCEcdecf70ed08c2199dcc1c2a57a51bbf3/9042)
 
-## 就酱我们就在别人的APP内嵌入了自己的代码了，本方案仅供参考学习，有不足之处望大佬批评教育。
+## 就酱我们就在别人的APP内嵌入了自己的代码了，本方案仅供参考学习，有不足之处望大佬指点。
