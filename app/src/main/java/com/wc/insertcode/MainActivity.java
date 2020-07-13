@@ -1,5 +1,6 @@
 package com.wc.insertcode;
 
+import android.Manifest;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
+import com.tbruyelle.rxpermissions2.Permission;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wc.insertcode.adapter.FileAdapter;
 import com.wc.insertcode.base.BaseActivity;
 import com.wc.insertcode.widget.LoadingDialog;
@@ -20,6 +23,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
 
 
 public class MainActivity extends BaseActivity {
@@ -114,6 +120,19 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void getData(boolean isRefresh, boolean isLoadMore) {
         super.getData(isRefresh, isLoadMore);
+        new CompositeDisposable().add(new RxPermissions(this).requestEach(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(new Consumer<Permission>() {
+                    @Override
+                    public void accept(Permission permission) throws Exception {
+                        if (permission.granted) {// 用户已经同意该权限
+                            getFileList();
+                        } else {//拒绝授权  (permission.shouldShowRequestPermissionRationale 没有选中『不再询问』)
+                        }
+                    }
+                }));
+    }
+
+    private void getFileList(){
         LoadingDialog.showLoadingDialog(this);
         new Thread(new Runnable() {
             @Override
