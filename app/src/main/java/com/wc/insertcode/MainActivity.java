@@ -25,7 +25,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
     private TextView tv_text, tv_delete;
     //文件服务地址+key
-    public static final String BASE_URL = "http://q8x9t7cfr.bkt.clouddn.com/";
+    public static final String BASE_URL = "http://chongguo.top/";
     private RecyclerView recycler_view;
     private FileAdapter mAdapter;
     private List<FileListUtil.FileBean> mData;

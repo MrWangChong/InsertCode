@@ -15,6 +15,7 @@ import com.wc.insertcode.R;
 import com.wc.insertcode.ShowImageActivity;
 import com.wc.insertcode.ShowVideoActivity;
 import com.wc.insertcode.base.BaseActivity;
+import com.wc.insertcode.utils.GifImageLoader;
 import com.wc.insertcode.utils.GlideApp;
 import com.wc.qiniu.FileListUtil;
 import com.wc.qiniu.read.PictureConfig;
@@ -56,7 +57,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
         if (is_video) {
             GlideApp.with(mContext).load(R.drawable.icon_video_paly).into(holder.iv_image);
         } else {
-            GlideApp.with(mContext).load(MainActivity.BASE_URL + dataBean.key).into(holder.iv_image);
+            GifImageLoader.with(mContext).load(MainActivity.BASE_URL + dataBean.key).into(holder.iv_image);
         }
 
         holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

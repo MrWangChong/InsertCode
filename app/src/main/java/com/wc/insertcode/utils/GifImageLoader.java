@@ -16,17 +16,14 @@ import com.wc.insertcode.R;
 import java.io.File;
 import java.net.URLDecoder;
 
-import pl.droidsonroids.gif.GifDrawable;
-
-
 /**
  * Gif加载器
  * Created by RushKing on 2019/5/7.
  */
 public class GifImageLoader {
     private static final String DATA_DIRECTORY = Environment.getExternalStorageDirectory()
-            + "/iicorp";//
-    private static final String GIF_DIRECTORY = DATA_DIRECTORY + "/gif/";//
+            + "/insertcode";//
+    private static final String GIF_DIRECTORY = DATA_DIRECTORY + "/image/";//
     private String mUrl;
     private String mThumb;
     private File mFile;
@@ -80,8 +77,9 @@ public class GifImageLoader {
         if (mFile != null && mFile.exists()) {
             try {
                 if (Integer.parseInt(mImageView.getTag(R.id.gif_image_loader).toString()) == lastTag) {
-                    GifDrawable gifDrawable = new GifDrawable(mFile);
-                    mImageView.setImageDrawable(gifDrawable);
+//                    GifDrawable gifDrawable = new GifDrawable(mFile);
+//                    mImageView.setImageDrawable(gifDrawable);
+                    GlideApp.with(mImageView).load(mFile).into(mImageView);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -105,8 +103,9 @@ public class GifImageLoader {
         if (file.exists()) {
             try {
                 if (Integer.parseInt(mImageView.getTag(R.id.gif_image_loader).toString()) == lastTag) {
-                    GifDrawable gifDrawable = new GifDrawable(file);
-                    mImageView.setImageDrawable(gifDrawable);
+//                    GifDrawable gifDrawable = new GifDrawable(file);
+//                    mImageView.setImageDrawable(gifDrawable);
+                    GlideApp.with(mImageView).load(file).into(mImageView);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -138,8 +137,9 @@ public class GifImageLoader {
                         Log.d("GifImageLoader", "fileSize : " + fileSize);
                         try {
                             if (Integer.parseInt(mImageView.getTag(R.id.gif_image_loader).toString()) == lastTag) {
-                                GifDrawable gifDrawable = new GifDrawable(file);
-                                mImageView.setImageDrawable(gifDrawable);
+//                                GifDrawable gifDrawable = new GifDrawable(file);
+//                                mImageView.setImageDrawable(gifDrawable);
+                                GlideApp.with(mImageView).load(file).into(mImageView);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();

@@ -23,9 +23,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
-import com.bumptech.glide.request.RequestOptions;
 import com.wc.dragphoto.widget.DragPhotoView;
 import com.wc.insertcode.base.BaseActivity;
 import com.wc.insertcode.utils.GifImageLoader;
@@ -278,7 +276,8 @@ public class ShowImageActivity extends BaseActivity {
                         if (url.endsWith(".gif")) {
                             GifImageLoader.with(ShowImageActivity.this).load(url).into(imageView);
                         } else {
-                            Glide.with(ShowImageActivity.this).load(url).thumbnail(Glide.with(ShowImageActivity.this).load(path)).into(imageView);
+                            GifImageLoader.with(ShowImageActivity.this).load(url).into(imageView);
+                            //Glide.with(ShowImageActivity.this).load(url).thumbnail(Glide.with(ShowImageActivity.this).load(path)).into(imageView);
                         }
                         imageView.setTag(R.id.photo_view_load_image, "loaded");
                     }
@@ -297,7 +296,8 @@ public class ShowImageActivity extends BaseActivity {
             String url = currentPosition < imageUrls.length ? imageUrls[currentPosition] : "";
             if (!TextUtils.isEmpty(url)) {
                 String path = url;
-                Glide.with(ShowImageActivity.this).load(url).thumbnail(Glide.with(ShowImageActivity.this).load(path)).into(mPhotoViews[currentPosition]);
+                GifImageLoader.with(ShowImageActivity.this).load(url).into(mPhotoViews[currentPosition]);
+                //Glide.with(ShowImageActivity.this).load(url).thumbnail(Glide.with(ShowImageActivity.this).load(path)).into(mPhotoViews[currentPosition]);
             }
         }
         mPhotoViews[currentPosition].performExitAnimation(this, imageBeans.get(currentPosition).left, imageBeans.get(currentPosition).top,
@@ -312,7 +312,8 @@ public class ShowImageActivity extends BaseActivity {
             String url = currentPosition < imageUrls.length ? imageUrls[currentPosition] : "";
             if (!TextUtils.isEmpty(url)) {
                 String path = url;
-                Glide.with(ShowImageActivity.this).load(url).thumbnail(Glide.with(ShowImageActivity.this).load(path)).into(mPhotoViews[currentPosition]);
+                GifImageLoader.with(ShowImageActivity.this).load(url).into(mPhotoViews[currentPosition]);
+                //Glide.with(ShowImageActivity.this).load(url).thumbnail(Glide.with(ShowImageActivity.this).load(path)).into(mPhotoViews[currentPosition]);
             }
         }
         mPhotoViews[currentPosition].finishWithAnimation(this, imageBeans.get(currentPosition).left, imageBeans.get(currentPosition).top,
@@ -348,14 +349,16 @@ public class ShowImageActivity extends BaseActivity {
                 if (url.endsWith(".gif")) {
                     GifImageLoader.with(this).load(url).into(imageView);
                 } else {
-                    Glide.with(this).load(url).apply(new RequestOptions().placeholder(sDrawable)).thumbnail(Glide.with(this).load(path)).into(imageView);
+                    GifImageLoader.with(this).load(url).into(imageView);
+                    //Glide.with(this).load(url).apply(new RequestOptions().placeholder(sDrawable)).thumbnail(Glide.with(this).load(path)).into(imageView);
                     imageView.setTag(R.id.photo_view_load_image, "loaded");
                 }
             } else {
                 if (url.endsWith(".gif")) {
                     GifImageLoader.with(this).load(url).into(imageView);
                 } else {
-                    Glide.with(this).load(url).thumbnail(Glide.with(this).load(path)).into(imageView);
+                    GifImageLoader.with(this).load(url).into(imageView);
+                    //Glide.with(this).load(url).thumbnail(Glide.with(this).load(path)).into(imageView);
                 }
                 imageView.setTag(R.id.photo_view_load_image, "loaded");
             }
@@ -363,7 +366,8 @@ public class ShowImageActivity extends BaseActivity {
             if (url.endsWith(".gif")) {
                 GifImageLoader.with(this).load(url).into(imageView);
             } else {
-                Glide.with(this).load(path).into(imageView);
+                GifImageLoader.with(this).load(url).into(imageView);
+                //Glide.with(this).load(path).into(imageView);
             }
             imageView.setTag(R.id.photo_view_load_image, "no loaded");
         }
